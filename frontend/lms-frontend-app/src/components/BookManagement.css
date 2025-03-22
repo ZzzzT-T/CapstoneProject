@@ -1,0 +1,76 @@
+/* Style for the table */
+.table-container {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+  }
+  
+  /* Style for the table itself */
+  table {
+    width: 100%;
+    border-collapse: collapse; /* To make the table look neat without double borders */
+    table-layout: auto;/* Allow table to auto-adjust width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding subtle shadow for better look */
+    
+  }
+  
+  /* Style for table headers */
+  th {
+    background-color: #3498db; /* Set a color for the header (you can change this) */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Style for table data cells */
+  td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light border for each row */
+    white-space: wrap; /* Prevent text from overflowing and causing layout issues */
+  }
+  
+  /* Style for hover effect on rows */
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Style for table actions */
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #2ecc71; /* Green button for actions */
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px; /* Round corners for buttons */
+  }
+  
+  button:hover {
+    background-color: #27ae60; /* Darker green on hover */
+  }
+  
+  /* Style for input fields inside table */
+  input[type="text"] {
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for input fields */
+  }
+  
+  select {
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for select dropdown */
+  }
+  
+  /* Style for Add new book row */
+  tr:last-child td {
+    border-top: 2px solid #3498db; /* Add top border to the last row */
+  }
+  
+  td button {
+    display: inline-block; /* Ensure buttons are displayed inline */
+  }

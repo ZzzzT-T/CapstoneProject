@@ -1,0 +1,81 @@
+/* RegistrationForm.css */
+
+/* General form styling */
+.registration-form {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-right: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9; 
+}
+  
+.registration-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+  
+.registration-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+  
+.registration-form input,
+.registration-form select{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+  
+.registration-form input[type="password"],
+.registration-form input[type="email"],
+.registration-form input[type="text"],
+.registration-form select {
+  font-size: 16px;
+}
+  
+.registration-form button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+  
+.registration-form button:hover {
+  background-color: #45a049;
+}
+
+/* Container to ensure the button is aligned with the password input */
+.password-container {
+  display: flex;
+  align-items: center; 
+  position: relative;
+  width: 100%;
+}
+
+/* Style for password visibility button */
+.password-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  width: 43px;
+  height: 30px;
+  padding: 0;
+  text-align: center;
+  line-height: 30px;
+  margin-left: -55px; 
+}
+  
+.password-container input[type="password"],
+.password-container input[type="text"] {
+  width: 100%;
+  padding-right: 60px; /* Add space for the button */
+  box-sizing: border-box; 
+}
