@@ -45,5 +45,10 @@ public class UserService {
 	public boolean isNullOrEmpty(User user) {
 		return user == null || (user.getUser_password() == null);
 	}
+
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
+		userRepository.delete(user);
+	}
 	
 }

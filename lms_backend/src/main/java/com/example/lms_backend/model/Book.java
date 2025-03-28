@@ -1,5 +1,9 @@
 package com.example.lms_backend.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -12,7 +16,11 @@ public class Book {
     private String isbn;
     private String category;
     private int publication_year;
+    @Transient
     private int copies_available;
+    @OneToMany
+    @JoinColumn(name = "books_book_id", referencedColumnName = "book_id", insertable = false, updatable = false)
+    private List<BookDetails> bookDetails;
 
     // Constructors
     public Book() {}
@@ -25,7 +33,7 @@ public class Book {
 		this.isbn = isbn;
 		this.category = category;
 		this.publication_year = publication_year;
-		this.copies_available = copies_available;
+		this.bookDetails = new ArrayList<BookDetails>();
 	}
 
     // Getters and Setters
@@ -53,9 +61,19 @@ public class Book {
 
 	public void setPublication_year(int publication_year) {this.publication_year = publication_year;}
 
-	public int getCopies_available() {return copies_available;}
+	public int getCopies_available() {
+		return this.bookDetails==null || this.bookDetails.isEmpty() ?0:this.bookDetails.size();
+	}
 
 	public void setCopies_available(int copies_available) {	this.copies_available = copies_available;}
+
+	public List<BookDetails> getBookDetails() {
+		return bookDetails;
+	}
+
+	public void setBookDetails(List<BookDetails> bookDetails) {
+		this.bookDetails = bookDetails;
+	}
 
 	
     

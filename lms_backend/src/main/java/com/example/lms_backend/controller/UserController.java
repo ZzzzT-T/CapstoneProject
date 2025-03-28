@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.lms_backend.model.Book;
 import com.example.lms_backend.model.LoginResult;
 import com.example.lms_backend.model.Role;
 import com.example.lms_backend.model.User;
@@ -30,7 +32,7 @@ public class UserController {
 	private RoleService roleService;
 	
 	@PostMapping("/addUser")
-    public User addBook(@RequestBody User user) {
+    public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 	
@@ -90,5 +92,23 @@ public class UserController {
 		return user == null || (user.getUser_password() == null);
 	}
 	
+	
+	@DeleteMapping("/delete/{id}") 
+    public String deleteUser(@PathVariable("id") int id) {
+		User user = userService.findById(id);
+    	if(!userService.isNullOrEmpty(user)) {
+    		userService.deleteUser(user);
+    		return "User deleted Successfully";
+    	}
+    	else {
+    		return "User not found";
+    	}        
+    }
+    
+    @PutMapping("/update") 
+    public User updateBook(@RequestBody User user) {
+    	userService.save(user); 
+        return user ; 
+    }
 	
 }

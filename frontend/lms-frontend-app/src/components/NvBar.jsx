@@ -15,13 +15,16 @@ const Nvbar = () => {
           <>
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/bookmanagement">Book Management</Link></li>
-            <li><Link to="/register">User Management</Link></li>
+            <li><Link to="/usermanagement">User Management</Link></li>
+            <li><Link to="/borrow">View Books</Link></li>
+            <li><Link to="/borrowdetails">My Borrowed Books</Link></li>
             <li><Link to="/logout">Logout</Link></li>
           </>
         ) : userRole === 'MEMBER' ? (
           <>
             <li><Link to="/home">Home</Link></li>
-            <li><Link to="/register">View Books</Link></li>
+            <li><Link to="/borrow">View Books</Link></li>
+            <li><Link to="/borrowdetails">My Borrowed Books</Link></li>
             <li><Link to="/logout">Logout</Link></li>
           </>
         ) : (

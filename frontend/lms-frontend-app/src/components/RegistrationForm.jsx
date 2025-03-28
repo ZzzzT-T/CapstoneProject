@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    user_username: '',
+    username: '',
     user_email: '',
     user_fullname: '',
     user_address: '',
     user_contact_info: '',
-    user_roles_id: '',
+    user_roles_id: '2',
     user_password: '',
     confirm_password: '',
   });
@@ -55,7 +55,7 @@ const RegistrationForm = () => {
       [name]: value,
     });
 
-    if(e.target.id==="user_username"){
+    if(e.target.id==="username"){
       const newUsername = e.target.value;
       if (newUsername.trim().length > 0) {
         checkUsername(newUsername);
@@ -161,7 +161,7 @@ const RegistrationForm = () => {
             value={formData.user_roles_id}
             placeholder="Select Role"
             onChange={handleChange}
-            required
+            disabled
           >
             <option value="">Select Role</option>
             {roles.map((role) => (
@@ -174,9 +174,9 @@ const RegistrationForm = () => {
         <div>
           <input
             type="text"
-            id="user_username"
-            name="user_username"
-            value={formData.user_username}
+            id="username"
+            name="username"
+            value={formData.username}
             onChange={handleChange}
             placeholder="Enter your username for login"
             required

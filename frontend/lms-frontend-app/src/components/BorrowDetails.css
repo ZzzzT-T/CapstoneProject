@@ -1,0 +1,46 @@
+.borrow-details {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+  }
+  
+  .borrow-details h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .borrow-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .borrow-details table th, .borrow-details table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .borrow-details table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .borrow-details table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .borrow-details table tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .borrow-details table td {
+    font-size: 14px;
+  }
+  
+  .borrow-details .fine-column {
+    text-align: center;
+    font-weight: bold;
+    color: #ff5733; /* Fine amount can be red or another color */
+  }
+  
